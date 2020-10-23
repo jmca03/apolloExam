@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
     
-});
+// });
 
 Auth::routes();
 
-Route::post('/breakdown', [App\Http\Controllers\BreakdownController::class, 'store'])->name('breakdown.store');
-Route::get('/breakdown', [App\Http\Controllers\BreakdownController::class, 'index'])->name('breakdown');
+Route::get('/', [App\Http\Controllers\BreakdownController::class, 'index'])->name('breakdown');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
